@@ -1,6 +1,7 @@
 ReallySimpleValidation
 ======================
 
+``` csharp
 Validator.Register(
   new Validator<Person>(
     new Required<Person>(p => p.Name)), // Required property
@@ -15,3 +16,4 @@ var person = new Person
 Validator.For<Person>().Validate(person); // Throws exception.
 
 var valid = Validator.For<Person>().Validate(person, silent: true); // Fails gracefully and returns false.
+```
